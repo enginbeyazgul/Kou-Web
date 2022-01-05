@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+$beyaz: aliceblue;
+$koyuyesil: #14823c;
+$yesil: #1E9D4C;
+$acikyesil: #31bf65;
+$cokacikyesil: #69ce8e;
+$lavivert: #3e4f71;
+$mavi: #516289;
+$info: #FFF3CD;
+$gri: #3C3F41;
+@media only screen and (max-width: 1080px) {
+    .sidebar{
+        left: -300px;
+    }
+    .hamburger{
+        top: 30px!important;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Chakra Petch', sans-serif;
+    transition: all 0.4s ease-out;
+}
+
+%flex-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+%yesil-btn {
+    background-color: $yesil;
+    color: $beyaz;
+    border-radius: 4px;
+    border: none;
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $acikyesil;
+    }
+}
+
+%input {
+    border: 1px solid #aaa;
+    background-color: transparent;
+    border-radius: 18px 4px 18px 4px;
+    font-size: 17px;
+    outline: none;
+    text-align: center;
+
+}
+
+body {
+    background-color: $beyaz;
+}
+
+.container {
+    position: relative;
+    height: auto;
+    margin: auto;
+    flex-wrap: wrap;
+
+}
+.containerr {
+    position: relative;
+    height: auto;
+    left: 300px;
+    width: calc(100% - 300px);
+    flex-wrap: wrap;
+}
+.hamburger{
+    display: flex;
+    z-index: 999;
+    position: absolute;
+    border-radius: 7px;
+    top: -50px;
+    left: 40px;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    color: $beyaz;
+    justify-content: center;
+    align-items: center;
+    background-color: $gri;
+    &:hover{
+        background-color: $mavi;
+        cursor: pointer;
+    }
+}
+.ders, .ders2, .ders3, .ders4{
+    display: none;
+}
+.sidebar{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    flex-direction: column;
+    position: fixed;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    float: left;
+    background-color: $gri;
+    border-right: 1px #ddd solid;
+    img{
+        margin-top: 20px;
+    }
+    #ul1:before{
+        font-family: "Font Awesome 5 Pro";
+        content: '\f055     Başvuru Yap';
+        color: $beyaz;
+        top: -24px;
+        left: 30px;
+        font-size: 14px;
+        position: absolute;
+        padding: 3px;
+    }
+    #ul2::before{
+        font-family: "Font Awesome 5 Pro";
+        content: '\f15c     Başvurularım';
+        color: $beyaz;
+        top: -24px;
+        left: 30px;
+        font-size: 14px;
+        position: absolute;
+        padding: 3px;
+    }
+    ul{
+        border-top: 1px solid #ddd;
+        margin-top: 30px;
+        position: relative;
+        width: 100%;
+        list-style: none;
+        li{
+            a{
+                display: flex;
+                padding: 10px;
+                justify-content: center;
+                text-align: center;
+                text-decoration: none;
+                color: $beyaz;
+                &:hover{
+                    background-color: $yesil;
+                }
+            }
+        }
+    }
+}
+
+.row {
+    @extend %flex-c;
+
+    input[type="submit"] {
+        margin-top: 25px;
+        width: 140px;
+        padding: 10px;
+        font-size: 18px;
+        @extend %yesil-btn;
+    }
+
+    input[type="text"] {
+        @extend %input;
+        width: 300px;
+        padding: 8px;
+    }
+
+    input[type="date"] {
+        @extend %input;
+        width: 300px;
+        padding: 7px;
+    }
+
+    select {
+        @extend %input;
+        width: 320px;
+        padding: 7px;
+    }
+
+    input[type="text"]:focus {
+        border: $yesil 1px solid;
+    }
+
+    label input:checked + .ilk .son {
+        left: 20px;
+    }
+
+    label input:checked + .ilk {
+        background-color: $cokacikyesil
+    }
+
+    label input {
+        position: absolute;
+        left: -9999px;
+    }
+
+    label .ilk {
+        cursor: pointer;
+        position: relative;
+        top: 10px;
+        width: 36px;
+        height: 14px;
+        background-color: #e1e1e1;
+        display: inline-block;
+        border-radius: 18px;
+        transition: 400ms background;
+    }
+
+    label .beni {
+        font-size: 14px;
+        position: relative;
+        left: 3px;
+        top: 7px;
+        cursor: pointer;
+    }
+
+    label .son {
+        position: absolute;
+        left: 0;
+        top: -3px;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: $yesil;
+        transition: 400ms left;
+    }
+
+    .logo {
+        width: 120px;
+        margin-top: -15px;
+    }
+
+    .font-15 {
+        font-size: 13px;
+        font-weight: bold;
+        margin-left: 3px;
+        padding-top: 10px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .font-15:hover {
+        color: $cokacikyesil;
+        cursor: pointer;
+    }
+    .basvuru{
+        display: flex;
+        width: 550px;
+        padding: 0 25px 0 25px;
+        border: 1px solid #ddd;
+        box-shadow: 3px 1px 10px #ddd;
+        height: 55px;
+        align-items: center;
+        border-radius: 7px;
+        justify-content: space-between;
+        div{
+            display: flex;
+            justify-content: center;
+            min-width: 80px;
+            span:first-child{
+                background-color: $yesil;
+                &:hover{
+                    background-color: $acikyesil !important;
+                }
+            }
+            span:nth-child(2){
+                background-color: #d0143a;
+                &:hover{
+                    background-color: #f52a51 !important;
+                }
+            }
+            span:last-child{
+                background-color: #f1c12f;
+                &:hover{
+                    background-color: #fadc4d !important;
+                }
+            }
+        }
+    }
+}
+
+.row a {
+    margin-left: 25px !important;
+}
+
+
+.columnn {
+    position: relative;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.column {
+    @extend %flex-c;
+    height: 90vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 50px;
+
+
+}
+.error-info {
+    display: flex;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    min-height: 35px;
+    font-size: 14px;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    background-color: $info;
+}
+.file-input {
+    position: absolute;
+    left: -9999px;
+}
+
+.file-input-aa{
+    @extend %yesil-btn;
+    display: flex;
+    padding: 10px;
+    font-size: 14px;
+}
+.file-input-a {
+    @extend %yesil-btn;
+    padding: 7px;
+    font-size: 13px;
+    margin: 5px 0 5px 70px;
+}
+
+.navigation {
+    @extend %flex-c;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    div {
+        @extend %flex-c;
+        width: 250px;
+
+        a {
+            @extend %yesil-btn;
+            margin: 25px;
+            padding: 8px;
+        }
+    }
+}
+
+footer {
+    @extend %flex-c;
+    position: fixed;
+    bottom: -16px;
+    width: 100%;
+    text-align: center;
+
+    p {
+        color: $beyaz;
+        border-radius: 6px 6px 0 0;
+        width: 250px;
+        padding: 5px 0 3px 0;
+        font-size: 12px;
+        background-color: $yesil;
+    }
+}
