@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Kou Web
 Web Application for Kocaeli Universty. This Web application developed with PHP(Laravel) code.
 
 This project was developed by 3 people.
